@@ -38,7 +38,8 @@ public class Time2
             if (value >= 0 && value < 24)
                 hour = value;
             else
-                throw new ArgumentOutOfRangeException("Hour", value, "Hour must be 0 - 23");
+                throw new ArgumentOutOfRangeException(
+                    "Hour", value, "Hour must be 0 - 23");
         } // end set
     } // end property Hour
 
@@ -54,7 +55,8 @@ public class Time2
             if (value >= 0 && value < 60)
                 minute = value;
             else
-                throw new ArgumentOutOfRangeException("Minute", value, "Minute must be 0 - 60");
+                throw new ArgumentOutOfRangeException(
+                    "Minute", value, "Minute must be 0 - 60");
         } // end set
     } // end property Minute
 
@@ -70,7 +72,8 @@ public class Time2
             if (value >= 0 && value < 60)
                 second = value;
             else
-                throw new ArgumentOutOfRangeException("Second", value, "Second must be 0 - 60");
+                throw new ArgumentOutOfRangeException(
+                    "Second", value, "Second must be 0 - 60");
         } // end set
     } // end property Second
 
@@ -84,7 +87,9 @@ public class Time2
     // convert to string in standard-time format (H:MM:SS AM or PM)
     public override string ToString()
     {
-        return string.Format("{0}:{1:D2}:{2:D2} {3}", ((Hour == 0 || Hour == 12) ? 12 : Hour % 12), Minute, Second, (Hour < 12 ? "AM" : "PM"));
+        return string.Format("{0}:{1:D2}:{2:D2} {3}",
+            ((Hour == 0 || Hour == 12) ? 12 : Hour % 12),
+            Minute, Second, (Hour < 12 ? "AM" : "PM"));
     } // end method ToString
 } // end class Time2
 
