@@ -77,6 +77,45 @@ public class Time2
         } // end set
     } // end property Second
 
+    // method to add time 
+    public void addtime(int h, int m, int s)
+    {
+        // initialize temporary variables for time
+        int hour = 0,
+            minute = 0,
+            second = 0;
+
+        // check for seconds overflow
+        if (s > 59)
+            second = s % 60;
+        else
+            second = s;
+
+        // add any seconds overflow to minutes and check for overflow
+        if (m + (s / 60) > 59)
+            minute = (m + (s / 60)) % 60;
+        else
+            minute = m;
+
+        // add minutes and seconds overflow to hours and check for overflow
+        if (h + ((m + (s / 60)) / 60) > 23)
+            throw new ArgumentOutOfRangeException(
+                "Total time will exceed 23:59:59");
+        else
+            hour = h + ((m + (s / 60)) / 60);
+
+        // add time
+        Hour += hour;
+        Minute += minute;
+        Second += second;
+
+    } // end method addtime
+
+    // method to add time using Time2 object
+    public void addtime(Time2 time)
+    {
+        addtime(time.Hour, time.Minute, time.Second);
+    } // end overloaded method addtime
     // convert to string in universal-time format (HH:MM:SS)
     public string ToUniversalString()
     {
