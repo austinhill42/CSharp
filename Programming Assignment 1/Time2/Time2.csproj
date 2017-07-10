@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Time2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Time2Modified.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

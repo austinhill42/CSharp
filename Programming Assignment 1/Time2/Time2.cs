@@ -1,7 +1,6 @@
 ﻿// Time2 class declaration with overloaded constructors
 using System;   // for class ArgumentOutOfRangeException
 
-
 public class Time2
 {
     private int hour;       // 0 - 23
@@ -81,14 +80,14 @@ public class Time2
     // convert to string in universal-time format (HH:MM:SS)
     public string ToUniversalString()
     {
-        return string.Format("{0:D2}:{1:D2}:{2:D2}", Hour, Minute, Second);
+        return string.Format("Using Time2: {0:D2}:{1:D2}:{2:D2}", Hour, Minute, Second);
 
     } // end method ToUniversalString
 
     // convert to string in standard-time format (H:MM:SS AM or PM)
     public override string ToString()
     {
-        return string.Format("{0}:{1:D2}:{2:D2} {3}",
+        return string.Format("Using Time2: {0}:{1:D2}:{2:D2} {3}",
             ((Hour == 0 || Hour == 12) ? 12 : Hour % 12),
             Minute, Second, (Hour < 12 ? "AM" : "PM"));
     } // end method ToString
