@@ -1,0 +1,4 @@
+1. The methods for the modified Time2 class were much easier to write, took much less time than the original Time2.
+2. The modified Time2 class can handle negative values. Additionally, if the added time values wind up being negative, the setter catches this and throws an exception
+3. It wouldn't be hard to implement in the original Time2 class, it already accounts for overflow values, it would just need a similar check for underflow. 
+		For the modified class, I wasn't thinking of negative values when I implemented the methods, it just worked out that way.

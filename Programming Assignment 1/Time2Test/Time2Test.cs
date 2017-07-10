@@ -13,7 +13,7 @@ public class Time2Test
         Time2 t4 = new Time2(12, 25, 42);   // 12:25:42
         Time2 t5 = new Time2(t4);           // 12:25:42
         Time2 t6;                           // initialized later in the program
-        Time2 t7 = new Time2(3);           // time object for part b
+        Time2 t7 = new Time2(3);            // time object for part b
 
         Console.WriteLine("Constructed with:\n");
         Console.WriteLine("t1: all arguments defaulted");
@@ -52,18 +52,34 @@ public class Time2Test
 
         t7.addtime(12, 12, 12);
         Console.WriteLine("\nt7: addtime 12:12:12");
-        Console.WriteLine(" {0}", t7.ToUniversalString());      // 15:12:12
-        Console.WriteLine(" {0}\n", t7.ToString());             // 3:12:12 PM
+        Console.WriteLine(" {0}", t7.ToUniversalString());  // 15:12:12
+        Console.WriteLine(" {0}\n", t7.ToString());         // 3:12:12 PM
 
         t7.addtime(3, 58, 180);
         Console.WriteLine("\nt7: addtime 3:58:180");
-        Console.WriteLine(" {0}", t7.ToUniversalString());      // 19:13:12
-        Console.WriteLine(" {0}\n", t7.ToString());             // 7:13:12 PM
+        Console.WriteLine(" {0}", t7.ToUniversalString());  // 19:13:12
+        Console.WriteLine(" {0}\n", t7.ToString());         // 7:13:12 PM
 
         t7.addtime(t2);
         Console.WriteLine("\nt7: addtime t2");
-        Console.WriteLine(" {0}", t7.ToUniversalString());      // 21:13:12
-        Console.WriteLine(" {0}\n", t7.ToString());             // 9:13:12 PM
+        Console.WriteLine(" {0}", t7.ToUniversalString());  // 21:13:12
+        Console.WriteLine(" {0}\n", t7.ToString());         // 9:13:12 PM
+
+        // attempt to add negative time values to t7
+        // works for modified Time2, but not original
+        try
+        {
+            t7.addtime(-5, 20, -15);
+            Console.WriteLine("\nt7: addtime -5:20:-15");
+            Console.WriteLine(" {0}", t7.ToUniversalString());  // 16:13:12
+            Console.WriteLine(" {0}\n", t7.ToString());         // 4:13:12 PM
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+
+            Console.WriteLine("\nException while adding time to t7: ");
+            Console.WriteLine(e.Message);
+        }
 
         // attempt to add time to t2 beyond 23:59:59
         try

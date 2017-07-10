@@ -112,9 +112,9 @@ public class Time2
     } // end method addtime
 
     // method to add time using Time2 object
-    public void addtime(Time2 time)
+    public void addtime(Time2 atime)
     {
-        addtime(time.Hour, time.Minute, time.Second);
+        addtime(atime.Hour, atime.Minute, atime.Second);
     } // end overloaded method addtime
     // convert to string in universal-time format (HH:MM:SS)
     public string ToUniversalString()

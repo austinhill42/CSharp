@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time2Test", "Time2Test\Time
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time2Modified", "Time2Modified\Time2Modified.csproj", "{B5CEB54E-C2E3-4F9F-BC70-650D380B1E87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Answers and screenshots", "Answers and screenshots", "{B8A29104-B284-41A0-804E-26DB8789F031}"
+	ProjectSection(SolutionItems) = preProject
+		Answers to Part B questions.txt = Answers to Part B questions.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

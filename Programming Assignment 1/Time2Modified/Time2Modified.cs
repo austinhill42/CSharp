@@ -12,7 +12,7 @@ public class Time2
     } // end Time2 three-argument constructor
 
     // Time2 constructor: another Time2 object supplied as an argument
-    public Time2(Time2 time) 
+    public Time2(Time2 time)
         : this(time.hour(), time.minute(), time.second()) { }
 
     // property that gets and sets the second
@@ -28,10 +28,10 @@ public class Time2
                 seconds = value;
             else
                 throw new ArgumentOutOfRangeException(
-                    "Second", value, "Second must be 0 - 60");
+                    "Second", value, "Second must be 0 - 86400");
         } // end set
     } // end property Second
-    
+
     // get hours since midnight
     public int hour()
     {
@@ -49,6 +49,18 @@ public class Time2
     {
         return (Seconds % 3600) % 60;
     }
+
+    public void addtime(int h, int m, int s)
+    {
+        Seconds += s + (m * 60) + (h * 3600);
+
+    } // end method addtime
+
+    // method to add time using Time2 object
+    public void addtime(Time2 atime)
+    {
+        addtime(atime.hour(), atime.minute(), atime.second());
+    } // end overloaded method addtime
 
     // convert to string in universal-time format (HH:MM:SS)
     public string ToUniversalString()
