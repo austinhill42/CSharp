@@ -41,8 +41,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Time2Modified">
-      <HintPath>..\Time2Modified\bin\Debug\Time2Modified.dll</HintPath>
+    <Reference Include="Time2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Time2\bin\Debug\Time2.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

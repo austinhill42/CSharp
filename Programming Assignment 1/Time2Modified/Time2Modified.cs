@@ -53,14 +53,14 @@ public class Time2
     // convert to string in universal-time format (HH:MM:SS)
     public string ToUniversalString()
     {
-        return string.Format("Using modified Time2 {0:D2}:{1:D2}:{2:D2}", hour(), minute(), second());
+        return string.Format("Using modified Time2: {0:D2}:{1:D2}:{2:D2}", hour(), minute(), second());
 
     } // end method ToUniversalString
 
     // convert to string in standard-time format (H:MM:SS AM or PM)
     public override string ToString()
     {
-        return string.Format("Using modified Time2{0}:{1:D2}:{2:D2} {3}",
+        return string.Format("Using modified Time2: {0}:{1:D2}:{2:D2} {3}",
             ((hour() == 0 || hour() == 12) ? 12 : hour() % 12),
             minute(), second(), hour() < 12 ? "AM" : "PM");
     } // end method ToString
