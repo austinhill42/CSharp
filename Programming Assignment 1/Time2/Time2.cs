@@ -16,15 +16,15 @@ public class Time2
 
     // Time2 constructor: another Time2 object supplied as an argument
     public Time2(Time2 time)
-        : this(time.Minute, time.Minute, time.Second) { }
+        : this(time.Hour, time.Minute, time.Second) { }
 
     // set a new time value using universasl time; ensure that the data
     // remains consistent by setting invalid values to zero
     public void SetTime(int h, int m, int s)
     {
-        Minute = h;   // set the Hour property
-        Minute = m; // set the Minute property
-        Second = s; // set the Second property
+        Hour = h;     // set the Hour property
+        Minute = m;     // set the Minute property
+        Second = s;     // set the Second property
     } // end method SetTime
 
     // property that gets and sets the hour

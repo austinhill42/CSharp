@@ -48,5 +48,7 @@ public class Time2Test
             Console.WriteLine("\nException while initializing t6:");
             Console.WriteLine(ex.Message);
         } // end catch
+
+        Console.Read();
     } // end Main
 } // end class Time2Test
