@@ -13,9 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time2Test", "Time2Test\Time
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time2Modified", "Time2Modified\Time2Modified.csproj", "{B5CEB54E-C2E3-4F9F-BC70-650D380B1E87}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Answers and screenshots", "Answers and screenshots", "{B8A29104-B284-41A0-804E-26DB8789F031}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Answers to part b questions", "Answers to part b questions", "{B8A29104-B284-41A0-804E-26DB8789F031}"
 	ProjectSection(SolutionItems) = preProject
 		Answers to Part B questions.txt = Answers to Part B questions.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time2LINQ", "Time2LINQ\Time2LINQ.csproj", "{1BD76643-FD1B-4614-9781-8CFF977949F6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6D296010-48EE-48FB-B905-7F363D3EB5A9} = {6D296010-48EE-48FB-B905-7F363D3EB5A9}
 	EndProjectSection
 EndProject
 Global
@@ -64,6 +69,18 @@ Global
 		{B5CEB54E-C2E3-4F9F-BC70-650D380B1E87}.Release|x64.Build.0 = Release|Any CPU
 		{B5CEB54E-C2E3-4F9F-BC70-650D380B1E87}.Release|x86.ActiveCfg = Release|Any CPU
 		{B5CEB54E-C2E3-4F9F-BC70-650D380B1E87}.Release|x86.Build.0 = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|x64.Build.0 = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BD76643-FD1B-4614-9781-8CFF977949F6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

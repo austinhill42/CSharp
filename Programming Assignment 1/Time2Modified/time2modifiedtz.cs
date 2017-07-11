@@ -1,25 +1,22 @@
 ﻿using System;
 
-public class time2tz : Time2
+public class Time2tz : Time2
 {
     private string timezone;
 
     // constructor that takes 0 - 4 arguments
-    public time2tz(int h = 0, int m = 0, int s = 0, string tz = "EST")
+    public Time2tz(int h = 0, int m = 0, int s = 0, string tz = "EST")
         : base(h, m, s)
     {
         Timezone = tz;
     } // end four-argument constructor
 
     // contructor to add a timezone to existing time object
-    public time2tz(Time2 atime, string tz)
-        : base(atime)
-    {
-        Timezone = tz;
-    } // end two argument constructor
+    public Time2tz(Time2 atime, string tz)
+        : this(atime.hour(), atime.minute(), atime.second(), tz) { }
 
-    // constructor to create time2tz object from existing time2tz object
-    public time2tz(time2tz atime)
+    // constructor to create Time2tz object from existing Time2tz object
+    public Time2tz(Time2tz atime)
         : this(atime.hour(), atime.minute(), atime.second(), atime.Timezone) { }
 
     // property that gets and sets the timezone
@@ -58,5 +55,5 @@ public class time2tz : Time2
         return string.Format(base.ToString() + " " + Timezone);
     } // end method ToString
 
-} // end class time2tz
+} // end class Time2tz
 

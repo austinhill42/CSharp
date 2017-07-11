@@ -14,11 +14,11 @@ public class Time2Test
         Time2 t5 = new Time2(t4);                       // 12:25:42
         Time2 t6;                                       // initialized later in the program
         Time2 t7 = new Time2(3);                        // time object for part b
-        time2tz t8 = new time2tz();                     // 00:00:00: EST
-        time2tz t9 = new time2tz(5);                    // 05:00:00 EST
-        time2tz t10 = new time2tz(5, 15, 30, "MST");    // 05:15:30 MST
-        time2tz t11 = new time2tz(t10);                 // 05:15:30 MST
-        time2tz t12;                                    // initialized later in the program
+        Time2tz t8 = new Time2tz();                     // 00:00:00: EST
+        Time2tz t9 = new Time2tz(5);                    // 05:00:00 EST
+        Time2tz t10 = new Time2tz(5, 15, 30, "MST");    // 05:15:30 MST
+        Time2tz t11 = new Time2tz(t10);                 // 05:15:30 MST
+        Time2tz t12;                                    // initialized later in the program
 
         Console.WriteLine("Constructed with:\n");
         Console.WriteLine("t1: all arguments defaulted");
@@ -111,14 +111,14 @@ public class Time2Test
         Console.WriteLine(" {0}", t10.ToUniversalString());  // 12:25:42 MST
         Console.WriteLine(" {0}\n", t10.ToString());         // 12:25:42 PM MST
 
-        Console.WriteLine("t11: time2tz object t10 specified");
+        Console.WriteLine("t11: Time2tz object t10 specified");
         Console.WriteLine(" {0}", t11.ToUniversalString());  // 12:25:42 MST
         Console.WriteLine(" {0}\n", t11.ToString());         // 12:25:42 PM MST
 
         // attempt to initialize t6 with invalid values
         try
         {
-            t12 = new time2tz(0, 0, 0, "ast"); // invalid values
+            t12 = new Time2tz(0, 0, 0, "ast"); // invalid values
         } // end try
         catch (ArgumentOutOfRangeException ex)
         {
