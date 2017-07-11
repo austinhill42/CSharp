@@ -7,13 +7,18 @@ public class Time2Test
 {
     public static void Main(string[] args)
     {
-        Time2 t1 = new Time2();             // 00:00:00
-        Time2 t2 = new Time2(2);            // 02:00:00
-        Time2 t3 = new Time2(21, 34);       // 21:34:00
-        Time2 t4 = new Time2(12, 25, 42);   // 12:25:42
-        Time2 t5 = new Time2(t4);           // 12:25:42
-        Time2 t6;                           // initialized later in the program
-        Time2 t7 = new Time2(3);            // time object for part b
+        Time2 t1 = new Time2();                         // 00:00:00
+        Time2 t2 = new Time2(2);                        // 02:00:00
+        Time2 t3 = new Time2(21, 34);                   // 21:34:00
+        Time2 t4 = new Time2(12, 25, 42);               // 12:25:42
+        Time2 t5 = new Time2(t4);                       // 12:25:42
+        Time2 t6;                                       // initialized later in the program
+        Time2 t7 = new Time2(3);                        // time object for part b
+        time2tz t8 = new time2tz();                     // 00:00:00: EST
+        time2tz t9 = new time2tz(5);                    // 05:00:00 EST
+        time2tz t10 = new time2tz(5, 15, 30, "MST");    // 05:15:30 MST
+        time2tz t11 = new time2tz(t10);                 // 05:15:30 MST
+        time2tz t12;                                    // initialized later in the program
 
         Console.WriteLine("Constructed with:\n");
         Console.WriteLine("t1: all arguments defaulted");
@@ -91,6 +96,35 @@ public class Time2Test
             Console.WriteLine("\nException while adding time to t7: ");
             Console.WriteLine(e.Message);
         }
+
+        Console.WriteLine("\nt8: all arguments defaulted");
+        Console.WriteLine(" {0}", t8.ToUniversalString());  // 00:00:00 EST
+        Console.WriteLine(" {0}\n", t8.ToString());         // 12:00:00 AM EST
+
+        Console.WriteLine(
+            "t9: hour specified; minute, second, and timezone defaulted");
+        Console.WriteLine(" {0}", t9.ToUniversalString());  // 02:00:00 EST
+        Console.WriteLine(" {0}\n", t9.ToString());         // 2:00:00 AM EST
+
+        Console.WriteLine(
+            "t10: hour, minute, second, and timezone specified");
+        Console.WriteLine(" {0}", t10.ToUniversalString());  // 12:25:42 MST
+        Console.WriteLine(" {0}\n", t10.ToString());         // 12:25:42 PM MST
+
+        Console.WriteLine("t11: time2tz object t10 specified");
+        Console.WriteLine(" {0}", t11.ToUniversalString());  // 12:25:42 MST
+        Console.WriteLine(" {0}\n", t11.ToString());         // 12:25:42 PM MST
+
+        // attempt to initialize t6 with invalid values
+        try
+        {
+            t12 = new time2tz(0, 0, 0, "ast"); // invalid values
+        } // end try
+        catch (ArgumentOutOfRangeException ex)
+        {
+            Console.WriteLine("\nException while initializing t12:");
+            Console.WriteLine(ex.Message);
+        } // end catch
 
         Console.Read();
 

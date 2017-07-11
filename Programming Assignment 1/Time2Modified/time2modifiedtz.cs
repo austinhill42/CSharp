@@ -20,7 +20,7 @@ public class time2tz : Time2
 
     // constructor to create time2tz object from existing time2tz object
     public time2tz(time2tz atime)
-        : this(atime.Hour, atime.Minute, atime.Second, atime.Timezone) { }
+        : this(atime.hour(), atime.minute(), atime.second(), atime.Timezone) { }
 
     // property that gets and sets the timezone
     public string Timezone

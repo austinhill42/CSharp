@@ -63,7 +63,7 @@ public class Time2
     } // end overloaded method addtime
 
     // convert to string in universal-time format (HH:MM:SS)
-    public string ToUniversalString()
+    public virtual string ToUniversalString()
     {
         return string.Format("Using modified Time2: {0:D2}:{1:D2}:{2:D2}", hour(), minute(), second());
 
