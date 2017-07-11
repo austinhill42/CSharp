@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Time2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="time2tz.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

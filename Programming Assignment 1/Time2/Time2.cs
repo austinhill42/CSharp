@@ -116,8 +116,9 @@ public class Time2
     {
         addtime(atime.Hour, atime.Minute, atime.Second);
     } // end overloaded method addtime
+
     // convert to string in universal-time format (HH:MM:SS)
-    public string ToUniversalString()
+    public virtual string ToUniversalString()
     {
         return string.Format("Using Time2: {0:D2}:{1:D2}:{2:D2}", Hour, Minute, Second);
 
