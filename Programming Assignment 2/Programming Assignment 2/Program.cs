@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Programming_Assignment_2
 {
-    static class Program
+    public class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -14,9 +14,16 @@ namespace Programming_Assignment_2
         [STAThread]
         static void Main()
         {
+            Form1 form = new Form1();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(form);
+            List<TextBox> ppg = new List<TextBox>();
+
+            foreach (TextBox tb in form.Controls.OfType<TextBox>())
+                if (tb.Name.Contains("ppg"))
+                    ppg.Add(tb);
         }
+
     }
 }
