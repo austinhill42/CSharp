@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Programming_Assignment_2
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
-        public Form1()
+        public Main_Form()
         {
             InitializeComponent();
         }
@@ -21,9 +21,20 @@ namespace Programming_Assignment_2
         {
             int year = DateTime.Today.Year;
 
-            foreach (Label l in ((Form1)sender).Controls.OfType<Label>())
+            foreach (Label l in ((Main_Form)sender).Controls.OfType<Label>())
                 if (l.Name.Contains("year") && !l.Name.Equals("l_year"))
                     l.Text = (year++).ToString();
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+            Car_Details form = new Car_Details();
+            form.Show();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

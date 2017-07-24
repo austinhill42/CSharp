@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Programming_Assignment_2
 {
-    public class Program
+    public class Car_Analysis
     {
         /// <summary>
         /// The main entry point for the application.
@@ -14,18 +14,11 @@ namespace Programming_Assignment_2
         [STAThread]
         static void Main()
         {
-            Form1 form;
+            Main_Form form;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(form = new Form1());
-            List<TextBox> ppg = new List<TextBox>();
-            List<Label> years = new List<Label>();
-
-            foreach (TextBox tb in form.Controls.OfType<TextBox>())
-                if (tb.Name.Contains("ppg"))
-                    ppg.Add(tb);
+            Application.Run(form = new Main_Form());
 
         }
-
     }
 }
