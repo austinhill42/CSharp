@@ -17,6 +17,13 @@ namespace Programming_Assignment_2
             InitializeComponent();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int year = DateTime.Today.Year;
+
+            foreach (Label l in ((Form1)sender).Controls.OfType<Label>())
+                if (l.Name.Contains("year") && !l.Name.Equals("l_year"))
+                    l.Text = (year++).ToString();
+        }
     }
 }

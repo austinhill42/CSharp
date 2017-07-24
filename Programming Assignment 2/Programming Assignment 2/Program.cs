@@ -14,15 +14,17 @@ namespace Programming_Assignment_2
         [STAThread]
         static void Main()
         {
-            Form1 form = new Form1();
+            Form1 form;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(form);
+            Application.Run(form = new Form1());
             List<TextBox> ppg = new List<TextBox>();
+            List<Label> years = new List<Label>();
 
             foreach (TextBox tb in form.Controls.OfType<TextBox>())
                 if (tb.Name.Contains("ppg"))
                     ppg.Add(tb);
+
         }
 
     }
