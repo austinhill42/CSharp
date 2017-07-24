@@ -16,5 +16,10 @@ namespace Programming_Assignment_2
         {
             InitializeComponent();
         }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

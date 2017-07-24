@@ -44,21 +44,21 @@
             this.l_year2 = new System.Windows.Forms.Label();
             this.l_year1 = new System.Windows.Forms.Label();
             this.pnl_ppg = new System.Windows.Forms.Panel();
-            this.maskedTextBox11 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_next = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox12 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox13 = new System.Windows.Forms.MaskedTextBox();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.pnl_ppg.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -214,128 +214,90 @@
             // 
             // pnl_ppg
             // 
-            this.pnl_ppg.Controls.Add(this.maskedTextBox11);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox10);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox2);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox3);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox5);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox6);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox7);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox8);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox9);
-            this.pnl_ppg.Controls.Add(this.maskedTextBox4);
+            this.pnl_ppg.Controls.Add(this.textBox10);
+            this.pnl_ppg.Controls.Add(this.textBox9);
+            this.pnl_ppg.Controls.Add(this.textBox8);
+            this.pnl_ppg.Controls.Add(this.textBox7);
+            this.pnl_ppg.Controls.Add(this.textBox6);
+            this.pnl_ppg.Controls.Add(this.textBox5);
+            this.pnl_ppg.Controls.Add(this.textBox4);
+            this.pnl_ppg.Controls.Add(this.textBox3);
+            this.pnl_ppg.Controls.Add(this.textBox2);
+            this.pnl_ppg.Controls.Add(this.textBox1);
             this.pnl_ppg.Location = new System.Drawing.Point(149, 112);
             this.pnl_ppg.Name = "pnl_ppg";
             this.pnl_ppg.Size = new System.Drawing.Size(637, 22);
             this.pnl_ppg.TabIndex = 100;
             // 
-            // maskedTextBox11
+            // textBox10
             // 
-            this.maskedTextBox11.Location = new System.Drawing.Point(3, 0);
-            this.maskedTextBox11.Mask = "000.000";
-            this.maskedTextBox11.Name = "maskedTextBox11";
-            this.maskedTextBox11.PromptChar = ' ';
-            this.maskedTextBox11.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox11.TabIndex = 43;
+            this.textBox10.Location = new System.Drawing.Point(585, 0);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(52, 20);
+            this.textBox10.TabIndex = 12;
             // 
-            // maskedTextBox10
+            // textBox9
             // 
-            this.maskedTextBox10.Location = new System.Drawing.Point(67, 0);
-            this.maskedTextBox10.Mask = "00000";
-            this.maskedTextBox10.Name = "maskedTextBox10";
-            this.maskedTextBox10.PromptChar = ' ';
-            this.maskedTextBox10.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox10.TabIndex = 44;
+            this.textBox9.Location = new System.Drawing.Point(455, 0);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(52, 20);
+            this.textBox9.TabIndex = 10;
             // 
-            // maskedTextBox2
+            // textBox8
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(587, 0);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PromptChar = ' ';
-            this.maskedTextBox2.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox2.TabIndex = 52;
+            this.textBox8.Location = new System.Drawing.Point(520, 0);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(52, 20);
+            this.textBox8.TabIndex = 11;
             // 
-            // maskedTextBox3
+            // textBox7
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(522, 0);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.PromptChar = ' ';
-            this.maskedTextBox3.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox3.TabIndex = 51;
+            this.textBox7.Location = new System.Drawing.Point(390, 0);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(52, 20);
+            this.textBox7.TabIndex = 9;
             // 
-            // maskedTextBox5
+            // textBox6
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(457, 0);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.PromptChar = ' ';
-            this.maskedTextBox5.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox5.TabIndex = 50;
+            this.textBox6.Location = new System.Drawing.Point(325, 0);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(52, 20);
+            this.textBox6.TabIndex = 8;
             // 
-            // maskedTextBox6
+            // textBox5
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(392, 0);
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.PromptChar = ' ';
-            this.maskedTextBox6.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox6.TabIndex = 49;
+            this.textBox5.Location = new System.Drawing.Point(260, 0);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(52, 20);
+            this.textBox5.TabIndex = 7;
             // 
-            // maskedTextBox7
+            // textBox4
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(327, 0);
-            this.maskedTextBox7.Name = "maskedTextBox7";
-            this.maskedTextBox7.PromptChar = ' ';
-            this.maskedTextBox7.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox7.TabIndex = 48;
+            this.textBox4.Location = new System.Drawing.Point(195, 0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(52, 20);
+            this.textBox4.TabIndex = 6;
             // 
-            // maskedTextBox8
+            // textBox3
             // 
-            this.maskedTextBox8.Location = new System.Drawing.Point(262, 0);
-            this.maskedTextBox8.Name = "maskedTextBox8";
-            this.maskedTextBox8.PromptChar = ' ';
-            this.maskedTextBox8.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox8.TabIndex = 47;
+            this.textBox3.Location = new System.Drawing.Point(130, 0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(52, 20);
+            this.textBox3.TabIndex = 5;
             // 
-            // maskedTextBox9
+            // textBox2
             // 
-            this.maskedTextBox9.Location = new System.Drawing.Point(132, 0);
-            this.maskedTextBox9.Mask = "00000";
-            this.maskedTextBox9.Name = "maskedTextBox9";
-            this.maskedTextBox9.PromptChar = ' ';
-            this.maskedTextBox9.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox9.TabIndex = 45;
-            this.maskedTextBox9.ValidatingType = typeof(int);
+            this.textBox2.Location = new System.Drawing.Point(65, 0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(52, 20);
+            this.textBox2.TabIndex = 4;
             // 
-            // maskedTextBox4
+            // textBox1
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(197, 0);
-            this.maskedTextBox4.Mask = "00000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.PromptChar = ' ';
-            this.maskedTextBox4.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox4.TabIndex = 46;
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancel.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_cancel.Location = new System.Drawing.Point(12, 199);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(83, 30);
-            this.btn_cancel.TabIndex = 54;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // btn_next
-            // 
-            this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_next.Location = new System.Drawing.Point(714, 199);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(83, 30);
-            this.btn_next.TabIndex = 53;
-            this.btn_next.Text = "Next";
-            this.btn_next.UseVisualStyleBackColor = true;
-            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(52, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // maskedTextBox1
             // 
@@ -344,7 +306,7 @@
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PromptChar = ' ';
             this.maskedTextBox1.Size = new System.Drawing.Size(40, 20);
-            this.maskedTextBox1.TabIndex = 40;
+            this.maskedTextBox1.TabIndex = 0;
             // 
             // maskedTextBox12
             // 
@@ -353,7 +315,7 @@
             this.maskedTextBox12.Name = "maskedTextBox12";
             this.maskedTextBox12.PromptChar = ' ';
             this.maskedTextBox12.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox12.TabIndex = 42;
+            this.maskedTextBox12.TabIndex = 2;
             // 
             // maskedTextBox13
             // 
@@ -362,20 +324,41 @@
             this.maskedTextBox13.Name = "maskedTextBox13";
             this.maskedTextBox13.PromptChar = ' ';
             this.maskedTextBox13.Size = new System.Drawing.Size(61, 20);
-            this.maskedTextBox13.TabIndex = 41;
+            this.maskedTextBox13.TabIndex = 1;
+            // 
+            // btn_next
+            // 
+            this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_next.Location = new System.Drawing.Point(714, 199);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(83, 30);
+            this.btn_next.TabIndex = 101;
+            this.btn_next.Text = "Next";
+            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancel.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_cancel.Location = new System.Drawing.Point(12, 199);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(83, 30);
+            this.btn_cancel.TabIndex = 102;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // Main_Form
             // 
-            this.AcceptButton = this.btn_next;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btn_cancel;
             this.ClientSize = new System.Drawing.Size(809, 241);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_next);
             this.Controls.Add(this.maskedTextBox13);
             this.Controls.Add(this.maskedTextBox12);
             this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.btn_next);
-            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.pnl_ppg);
             this.Controls.Add(this.l_year1);
             this.Controls.Add(this.l_year2);
@@ -420,21 +403,21 @@
         private System.Windows.Forms.Label l_year2;
         private System.Windows.Forms.Label l_year1;
         private System.Windows.Forms.Panel pnl_ppg;
-        private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.Button btn_next;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox11;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox12;
         private System.Windows.Forms.MaskedTextBox maskedTextBox13;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }
 
