@@ -54,11 +54,11 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox12 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox13 = new System.Windows.Forms.MaskedTextBox();
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.tb_numcars = new System.Windows.Forms.TextBox();
+            this.tb_citymiles = new System.Windows.Forms.TextBox();
+            this.tb_hwymiles = new System.Windows.Forms.TextBox();
             this.pnl_ppg.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -299,33 +299,6 @@
             this.textBox1.Size = new System.Drawing.Size(52, 20);
             this.textBox1.TabIndex = 3;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(207, 36);
-            this.maskedTextBox1.Mask = "00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = ' ';
-            this.maskedTextBox1.Size = new System.Drawing.Size(40, 20);
-            this.maskedTextBox1.TabIndex = 0;
-            // 
-            // maskedTextBox12
-            // 
-            this.maskedTextBox12.Location = new System.Drawing.Point(718, 36);
-            this.maskedTextBox12.Mask = "000000";
-            this.maskedTextBox12.Name = "maskedTextBox12";
-            this.maskedTextBox12.PromptChar = ' ';
-            this.maskedTextBox12.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBox12.TabIndex = 2;
-            // 
-            // maskedTextBox13
-            // 
-            this.maskedTextBox13.Location = new System.Drawing.Point(437, 36);
-            this.maskedTextBox13.Mask = "000000";
-            this.maskedTextBox13.Name = "maskedTextBox13";
-            this.maskedTextBox13.PromptChar = ' ';
-            this.maskedTextBox13.Size = new System.Drawing.Size(61, 20);
-            this.maskedTextBox13.TabIndex = 1;
-            // 
             // btn_next
             // 
             this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -349,16 +322,37 @@
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
+            // tb_numcars
+            // 
+            this.tb_numcars.Location = new System.Drawing.Point(207, 36);
+            this.tb_numcars.Name = "tb_numcars";
+            this.tb_numcars.Size = new System.Drawing.Size(52, 20);
+            this.tb_numcars.TabIndex = 0;
+            // 
+            // tb_citymiles
+            // 
+            this.tb_citymiles.Location = new System.Drawing.Point(437, 36);
+            this.tb_citymiles.Name = "tb_citymiles";
+            this.tb_citymiles.Size = new System.Drawing.Size(52, 20);
+            this.tb_citymiles.TabIndex = 1;
+            // 
+            // tb_hwymiles
+            // 
+            this.tb_hwymiles.Location = new System.Drawing.Point(714, 36);
+            this.tb_hwymiles.Name = "tb_hwymiles";
+            this.tb_hwymiles.Size = new System.Drawing.Size(52, 20);
+            this.tb_hwymiles.TabIndex = 2;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 241);
+            this.Controls.Add(this.tb_hwymiles);
+            this.Controls.Add(this.tb_citymiles);
+            this.Controls.Add(this.tb_numcars);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_next);
-            this.Controls.Add(this.maskedTextBox13);
-            this.Controls.Add(this.maskedTextBox12);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.pnl_ppg);
             this.Controls.Add(this.l_year1);
             this.Controls.Add(this.l_year2);
@@ -403,9 +397,6 @@
         private System.Windows.Forms.Label l_year2;
         private System.Windows.Forms.Label l_year1;
         private System.Windows.Forms.Panel pnl_ppg;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox12;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox13;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
@@ -418,6 +409,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.TextBox tb_numcars;
+        private System.Windows.Forms.TextBox tb_citymiles;
+        private System.Windows.Forms.TextBox tb_hwymiles;
     }
 }
 

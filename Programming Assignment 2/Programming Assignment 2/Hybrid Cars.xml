@@ -1,118 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- This XML file lists all current (model year 2000 or newer) hybrid car models, ordered by manufacturer-->
+<!-- To add a make or model, follow the format shown in the document. Make/model order isn't important-->
 
-<Makes>
-  <Acura>
-    ILX Hybrix
-    NSX
-  </Acura>
-   <BMW>
-    X6 ActiveHybrid
-    ActiveHybrid 7
-    ActiveHybrid 5
-    ActiveHybrid 3
-    i3 REx
-    i8
-  </BMW>
-  <Cadillac>
-    Escalade
-    ELR Plug-in
-  </Cadillac>
-  <Chevrolet>
-    Silverado Hybrid
-    Tahoe
-    Malibu
-    Volt 
-  </Chevrolet>
-  <Dodge>
-    Durango
-  </Dodge>
-  <Ferrari>
-    LaFerrari
-  </Ferrari>
-  <Ford>
-    Escape Hybrid
-    Fusion Hybrid
-    C-Max Hybrid
-    C-Max Energi
-    Fusion Energi
-  </Ford>
-  <GMC>
-    Sierra Hybrid
-    Yukon Hybrid
-  </GMC>
-  <Honda>
-    Civic Hybrid
-    Accord Hybrid
-    Insight
-    CRZ
-    Fit Hybrid
-    Accord Plug-in
-    NSX
-  </Honda>
-  <Hyundai>
-    Elantra LPI Hybrid
-    Sonata Hybrid
-  </Hyundai>
-  <Infiniti>
-    M35 Hybrid
-  </Infiniti>
-  <Kia>
-    Optima Hybrid
-  </Kia>
-  <Lexus>
-    RX 400h
-    GS 450h
-    LS600hl
-    HS 250h
-    CT 200h
-    ES 300h
-  </Lexus>
-  <Lincoln>
-    MKZ Hybrid
-  </Lincoln>
-  <Mazda>
-    Tribute
-  </Mazda>
-  <McLaren>
-    P1
-  </McLaren>
-  <Mercedes-Benz>
-    S400 BlueHybrid
-  </Mercedes-Benz>
-  <Mitsubishi>
-    Outlander P-HEV
-  </Mitsubishi>
-  <Nissan>
-    Altima
-  </Nissan>
-  <Porsche>
-    Cayenne S
-    918 Spyder
-  </Porsche>
-  <Saturn>
-    Vue Green Line
-    Aura Green Line Hybrid
-  </Saturn>
-  <Suzuki>
-    twin
-  </Suzuki>
-  <Toyota>
-    Prius
-    Crown
-    Highlander
-    Camry
-    Auris Hybrid
-    Prius c
-    Yaris
-    Prius Plug-in Hybrid
-    Avalon Hybrid
-  </Toyota>
-  <Volkswagen>
-    Touareg Hybrid
-    Jetta Hybrid
-  </Volkswagen>
-  <Volvo>
-    V60 Plug-in Hybrid
-  </Volvo>
-</Makes>
+<root>
+  <make name = "Acura">
+    <model name = "ILX Hybrix" />
+    <model name = "NSX" />
+  </make>
+  <make name = "BMW">
+    <model name = "X6 ActiveHybrid" />
+    <model name = "ActiveHybrid 7" />
+    <model name = "ActiveHybrid 5" />
+    <model name = "ActiveHybrid 3" />
+    <model name = "i3 REx" />
+    <model name = "i8" />
+  </make>
+  <make name = "Cadillac">
+    <model name = "Escalade" />
+    <model name = "ELR Plug-in" />
+  </make>
+  <make name = "Chevrolet">
+    <model name = "Silverado Hybrid" />
+    <model name = "Tahoe" />
+    <model name = "Malibu" />
+    <model name = "Volt" />
+  </make>
+  <make name = "Dodge">
+    <model name = "Durango" />
+  </make>
+  <make name = "Ferrari">
+    <model name = "LaFerrari" />
+  </make>
+  <make name = "Ford">
+    <model name = "Escape Hybrid" />
+    <model name = "Fusion Hybrid" />
+    <model name = "C-Max Hybrid" />
+    <model name = "C-Max Energi" />
+    <model name = "Fusion Energi" />
+  </make>
+  <make name = "GMC">
+    <model name = "Sierra Hybrid" />
+    <model name = "Yukon Hybrid" />
+  </make>
+  <make name = "Honda">
+    <model name = "Civic Hybrid" />
+    <model name = "Accord Hybrid" />
+    <model name = "Insight" />
+    <model name = "CRZ" />
+    <model name = "Fit Hybrid" />
+    <model name = "Accord Plug-in" />
+    <model name = "NSX" />
+  </make>
+  <make name = "Hyundai">
+    <model name = "Elantra LPI Hybrid" />
+    <model name = "Sonata Hybrid" />
+  </make>
+  <make name = "Infiniti">
+    <model name = "M35 Hybrid" />
+  </make>
+  <make name = "Kia">
+    <model name = "Optima Hybrid" />
+  </make>
+  <make name = "Lexus">
+    <model name = "RX 400h" />
+    <model name = "GS 450h" />
+    <model name = "LS600hl" />
+    <model name = "HS 250h" />
+    <model name = "CT 200h" />
+    <model name = "ES 300h" />
+  </make>
+  <make name = "Lincoln">
+    <model name = "MKZ Hybrid" />
+  </make>
+  <make name = "Mazda">
+    <model name = "Tribute" />
+  </make>
+  <make name = "McLaren">
+    <model name = "P1" />
+  </make>
+  <make name = "Mercedes-Benz">
+    <model name = "S400 BlueHybrid" />
+  </make>
+  <make name = "Mitsubishi">
+    <model name = "Outlander P-HEV" />
+  </make>
+  <make name = "Nissan">
+    <model name = "Altima" />
+  </make>
+  <make name = "Porsche">
+    <model name = "Cayenne S" />
+    <model name = "918 Spyder" />
+  </make>
+  <make name = "Saturn">
+    <model name = "Vue Green Line" />
+    <model name = "Aura Green Line Hybrid" />
+  </make>
+  <make name = "Suzuki">
+    <model name = "twin" />
+  </make>
+  <make name = "Toyota">
+    <model name = "Prius" />
+    <model name = "Crown" />
+    <model name = "Highlander" />
+    <model name = "Camry" />
+    <model name = "Auris Hybrid" />
+    <model name = "Prius c" />
+    <model name = "Yaris" />
+    <model name = "Prius Plug-in Hybrid" />
+    <model name = "Avalon Hybrid" />
+  </make>
+  <make name = "Volkswagen">
+    <model name = "Touareg Hybrid" />
+    <model name = "Jetta Hybrid" />
+  </make>
+  <make name = "Volvo">
+    <model name = "V60 Plug-in Hybrid" />
+  </make>
+</root>
 

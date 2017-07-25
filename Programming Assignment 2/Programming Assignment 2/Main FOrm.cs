@@ -12,6 +12,9 @@ namespace Programming_Assignment_2
 {
     public partial class Main_Form : Form
     {
+        public List<string> Makes { get; set; }
+        public List<string> Models { get; set; }
+
         public Main_Form()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace Programming_Assignment_2
         {
             int year = DateTime.Today.Year;
 
+            // assign the next ten years to the labels for price/Gal
             foreach (Label l in ((Main_Form)sender).Controls.OfType<Label>())
                 if (l.Name.Contains("year") && !l.Name.Equals("l_year"))
                     l.Text = (year++).ToString();
@@ -28,8 +32,25 @@ namespace Programming_Assignment_2
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-            Car_Details form = new Car_Details();
-            form.Show();
+            Main_Form mainform = (Main_Form)(((Button)sender).Parent);
+            bool complete = true;
+
+            // check to make sure the user has filled out all fields
+            foreach (TextBox tb in mainform.Controls.OfType<TextBox>())
+                if (tb.Text.Equals(string.Empty))
+                    complete = false;
+
+            // show error window if any fields are missing, otherwise continue
+            if (complete)
+            {
+                Car_Details form = new Car_Details();
+                form.Show();              
+            }
+            else
+            {
+                Error_Form form = new Error_Form();
+                form.Show();
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
