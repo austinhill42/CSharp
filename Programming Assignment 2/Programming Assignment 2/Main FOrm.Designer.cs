@@ -377,7 +377,7 @@
             this.Controls.Add(this.l_numCars);
             this.Name = "Main_Form";
             this.Text = "Hybrid Car Analysis";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnl_ppg.ResumeLayout(false);
             this.pnl_ppg.PerformLayout();
             this.ResumeLayout(false);

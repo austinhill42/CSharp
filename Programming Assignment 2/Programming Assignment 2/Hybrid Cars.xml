@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Makes>
+  <Acura>
+    ILX Hybrix
+    NSX
+  </Acura>
+   <BMW>
+    X6 ActiveHybrid
+    ActiveHybrid 7
+    ActiveHybrid 5
+    ActiveHybrid 3
+    i3 REx
+    i8
+  </BMW>
+  <Cadillac>
+    Escalade
+    ELR Plug-in
+  </Cadillac>
+  <Chevrolet>
+    Silverado Hybrid
+    Tahoe
+    Malibu
+    Volt 
+  </Chevrolet>
+  <Dodge>
+    Durango
+  </Dodge>
+  <Ferrari>
+    LaFerrari
+  </Ferrari>
+  <Ford>
+    Escape Hybrid
+    Fusion Hybrid
+    C-Max Hybrid
+    C-Max Energi
+    Fusion Energi
+  </Ford>
+  <GMC>
+    Sierra Hybrid
+    Yukon Hybrid
+  </GMC>
+  <Honda>
+    Civic Hybrid
+    Accord Hybrid
+    Insight
+    CRZ
+    Fit Hybrid
+    Accord Plug-in
+    NSX
+  </Honda>
+  <Hyundai>
+    Elantra LPI Hybrid
+    Sonata Hybrid
+  </Hyundai>
+  <Infiniti>
+    M35 Hybrid
+  </Infiniti>
+  <Kia>
+    Optima Hybrid
+  </Kia>
+  <Lexus>
+    RX 400h
+    GS 450h
+    LS600hl
+    HS 250h
+    CT 200h
+    ES 300h
+  </Lexus>
+  <Lincoln>
+    MKZ Hybrid
+  </Lincoln>
+  <Mazda>
+    Tribute
+  </Mazda>
+  <McLaren>
+    P1
+  </McLaren>
+  <Mercedes-Benz>
+    S400 BlueHybrid
+  </Mercedes-Benz>
+  <Mitsubishi>
+    Outlander P-HEV
+  </Mitsubishi>
+  <Nissan>
+    Altima
+  </Nissan>
+  <Porsche>
+    Cayenne S
+    918 Spyder
+  </Porsche>
+  <Saturn>
+    Vue Green Line
+    Aura Green Line Hybrid
+  </Saturn>
+  <Suzuki>
+    twin
+  </Suzuki>
+  <Toyota>
+    Prius
+    Crown
+    Highlander
+    Camry
+    Auris Hybrid
+    Prius c
+    Yaris
+    Prius Plug-in Hybrid
+    Avalon Hybrid
+  </Toyota>
+  <Volkswagen>
+    Touareg Hybrid
+    Jetta Hybrid
+  </Volkswagen>
+  <Volvo>
+    V60 Plug-in Hybrid
+  </Volvo>
+</Makes>
+
