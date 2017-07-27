@@ -369,7 +369,10 @@
             this.Controls.Add(this.l_highwayMiles);
             this.Controls.Add(this.l_cityMiles);
             this.Controls.Add(this.l_numCars);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Main_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hybrid Car Analysis";
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.pnl_ppg.ResumeLayout(false);

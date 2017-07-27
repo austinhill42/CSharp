@@ -69,8 +69,8 @@ namespace Programming_Assignment_2
             }
             else
             {
-                Error_Form error = new Error_Form();
-                error.Show();
+                Error_Form error = new Error_Form("You must complete all fields to continue!");
+                error.ShowDialog();
             }
         }
 
@@ -98,25 +98,47 @@ namespace Programming_Assignment_2
             // reset the models combobox
             form.cb_models.Items.Clear();
 
-            // populate the models combobox with the hybrid cars of the selected make
-            populateModels(((ComboBox)sender).SelectedItem.ToString(), form);
+            string selected = ((ComboBox)sender).SelectedItem.ToString();
+            List<string> temp = new List<string>();
+
+            // gets the list of models for the selected make from the xml file
+            foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
+                if (make.Attribute("name").Value.Equals(selected))
+                    foreach (XElement model in make.Elements("model"))
+                        temp.Add(model.Attribute("name").Value);
+
+            // order the items alphabetically
+            object[] models = (from model in temp
+                                   orderby model ascending
+                                   select model).ToArray<object>();
+
+            // populate the combobox with the list of models
+            form.cb_models.Items.AddRange(models);
         }
 
         private void Car_Details_Load(object sender, EventArgs e)
         {
-            // populates the makes combobox with a list of current hybrid car manufacturers 
+            List<string> temp = new List<string>();
+
+            // gets the list of makes from the xml file
             foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
-                cb_makes.Items.Add(make.Attribute("name").Value);
+                temp.Add(make.Attribute("name").Value);
+
+            // order the items alphabetically
+            object[] makes = (from make in temp
+                                  orderby make ascending
+                                  select make).ToArray<object>();
+
+            // populate the combobox with the list of makes
+            cb_makes.Items.AddRange(makes);
+
         }
 
         private void populateModels(string name, Car_Details form)
         {
             // populates the models combobox with current (model year 2000 or newer) hybrid models
             // from the selected make
-            foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
-                if (make.Attribute("name").Value.Equals(name))
-                    foreach (XElement model in make.Elements("model"))
-                        form.cb_models.Items.Add(model.Attribute("name").Value);
+            
         }
     }
 }

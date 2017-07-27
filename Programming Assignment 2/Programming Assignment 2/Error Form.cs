@@ -16,5 +16,10 @@ namespace Programming_Assignment_2
         {
             InitializeComponent();
         }
+
+        public Error_Form(string message) : this()
+        {
+            l_error.Text = message;
+        }
     }
 }

@@ -246,7 +246,9 @@
             this.Controls.Add(this.l_make);
             this.Controls.Add(this.cb_makes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Car_Details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Details";
             this.Load += new System.EventHandler(this.Car_Details_Load);
             this.ResumeLayout(false);

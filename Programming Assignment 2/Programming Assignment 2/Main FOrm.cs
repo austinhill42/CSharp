@@ -39,17 +39,20 @@ namespace Programming_Assignment_2
             foreach (TextBox tb in mainform.Controls.OfType<TextBox>())
                 if (tb.Text.Equals(string.Empty))
                     complete = false;
+            foreach (TextBox tb in mainform.pnl_ppg.Controls)
+                if (tb.Text.Equals(string.Empty))
+                    complete = false;
 
             // show error window if any fields are missing, otherwise continue
             if (complete)
             {
                 Car_Details form = new Car_Details();
-                form.Show();              
+                form.ShowDialog();              
             }
             else
             {
-                Error_Form form = new Error_Form();
-                form.Show();
+                Error_Form form = new Error_Form("You must complete all fields to continue!");
+                form.ShowDialog();
             }
         }
 
