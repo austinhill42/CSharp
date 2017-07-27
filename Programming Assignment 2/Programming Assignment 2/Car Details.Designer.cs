@@ -44,6 +44,7 @@
             this.l_number = new System.Windows.Forms.Label();
             this.l_counter = new System.Windows.Forms.Label();
             this.btn_prev = new System.Windows.Forms.Button();
+            this.btn_done = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cb_makes
@@ -181,7 +182,7 @@
             // 
             this.btn_next.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_next.Location = new System.Drawing.Point(383, 203);
+            this.btn_next.Location = new System.Drawing.Point(292, 203);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(83, 30);
             this.btn_next.TabIndex = 5;
@@ -214,13 +215,24 @@
             this.btn_prev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_prev.Enabled = false;
             this.btn_prev.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_prev.Location = new System.Drawing.Point(245, 203);
+            this.btn_prev.Location = new System.Drawing.Point(192, 203);
             this.btn_prev.Name = "btn_prev";
             this.btn_prev.Size = new System.Drawing.Size(94, 30);
             this.btn_prev.TabIndex = 6;
             this.btn_prev.Text = "Previous Car";
             this.btn_prev.UseVisualStyleBackColor = true;
             this.btn_prev.Click += new System.EventHandler(this.b_prev_Click);
+            // 
+            // btn_done
+            // 
+            this.btn_done.Enabled = false;
+            this.btn_done.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_done.Location = new System.Drawing.Point(381, 203);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(96, 30);
+            this.btn_done.TabIndex = 107;
+            this.btn_done.Text = "Done";
+            this.btn_done.UseVisualStyleBackColor = true;
             // 
             // Car_Details
             // 
@@ -229,6 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancel;
             this.ClientSize = new System.Drawing.Size(478, 245);
+            this.Controls.Add(this.btn_done);
             this.Controls.Add(this.btn_prev);
             this.Controls.Add(this.l_counter);
             this.Controls.Add(this.l_number);
@@ -274,5 +287,6 @@
         private System.Windows.Forms.Label l_number;
         private System.Windows.Forms.Label l_counter;
         private System.Windows.Forms.Button btn_prev;
+        private System.Windows.Forms.Button btn_done;
     }
 }

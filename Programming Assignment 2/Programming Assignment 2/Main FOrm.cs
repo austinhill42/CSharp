@@ -12,9 +12,6 @@ namespace Programming_Assignment_2
 {
     public partial class Main_Form : Form
     {
-        public List<string> Makes { get; set; }
-        public List<string> Models { get; set; }
-
         public Main_Form()
         {
             InitializeComponent();
@@ -46,8 +43,16 @@ namespace Programming_Assignment_2
             // show error window if any fields are missing, otherwise continue
             if (complete)
             {
+                // store the values entered
+                Car_Analysis.NumCars = Convert.ToInt32(tb_numcars.Text);
+                Car_Analysis.CityMiles = Convert.ToInt32(tb_citymiles.Text);
+                Car_Analysis.HwyMiles = Convert.ToInt32(tb_hwymiles.Text);
+                Car_Analysis.PricePerGal = ((from control in mainform.pnl_ppg.Controls.Cast<TextBox>()
+                                             select Convert.ToDouble(control.Text)).Reverse().ToList<double>());
+
+
                 Car_Details form = new Car_Details();
-                form.ShowDialog();              
+                form.ShowDialog();
             }
             else
             {

@@ -53,7 +53,14 @@ namespace Programming_Assignment_2
                 // update the counter for selected car
                 form.l_counter.Text = (++count).ToString();
 
-                // don't allow negative counter
+                // don't allow the user to enter more cars than given
+                if (form.l_counter.Text.Equals(Car_Analysis.NumCars.ToString()))
+                {
+                    form.btn_next.Enabled = false;
+                    form.btn_done.Enabled = true;
+                }
+                
+                // make previous button clickable
                 if (!form.btn_prev.Enabled)
                     form.btn_prev.Enabled = true;
 
@@ -85,6 +92,10 @@ namespace Programming_Assignment_2
             // don't allow negative counter
             if (form.l_counter.Text.Equals("1"))
                 ((Button)sender).Enabled = false;
+
+            /*
+             * TODO add done and next functionality
+             */ 
         }
 
         private void cb_makes_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,7 +108,8 @@ namespace Programming_Assignment_2
 
             // reset the models combobox
             form.cb_models.Items.Clear();
-
+            form.cb_models.Text = string.Empty;
+            
             string selected = ((ComboBox)sender).SelectedItem.ToString();
             List<string> temp = new List<string>();
 
@@ -118,7 +130,13 @@ namespace Programming_Assignment_2
 
         private void Car_Details_Load(object sender, EventArgs e)
         {
-            List<string> temp = new List<string>();
+            if (Car_Analysis.NumCars == 1)
+            {
+                ((Car_Details)sender).btn_next.Enabled = false;
+                ((Car_Details)sender).btn_done.Enabled = true;
+            }
+
+            List <string> temp = new List<string>();
 
             // gets the list of makes from the xml file
             foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
