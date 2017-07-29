@@ -52,12 +52,6 @@
     <Compile Include="Car Details.Designer.cs">
       <DependentUpon>Car Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="Error Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Error Form.Designer.cs">
-      <DependentUpon>Error Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,9 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Car Details.resx">
       <DependentUpon>Car Details.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Error Form.resx">
-      <DependentUpon>Error Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Form.resx">
       <DependentUpon>Main Form.cs</DependentUpon>

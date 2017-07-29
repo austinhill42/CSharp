@@ -56,8 +56,7 @@ namespace Programming_Assignment_2
             }
             else
             {
-                Error_Form form = new Error_Form("You must complete all fields to continue!");
-                form.ShowDialog();
+                MessageBox.Show("You must complete all fields to continue!", "Error", MessageBoxButtons.OK);
             }
         }
 
