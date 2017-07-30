@@ -35,26 +35,28 @@
             this.l_price = new System.Windows.Forms.Label();
             this.l_mpg = new System.Windows.Forms.Label();
             this.l_city = new System.Windows.Forms.Label();
-            this.l_highway = new System.Windows.Forms.Label();
+            this.l_hwy = new System.Windows.Forms.Label();
             this.tb_price = new System.Windows.Forms.TextBox();
             this.tb_city = new System.Windows.Forms.TextBox();
-            this.tb_highway = new System.Windows.Forms.TextBox();
+            this.tb_hwy = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
             this.l_number = new System.Windows.Forms.Label();
             this.l_counter = new System.Windows.Forms.Label();
             this.btn_prev = new System.Windows.Forms.Button();
-            this.btn_done = new System.Windows.Forms.Button();
+            this.l_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cb_makes
             // 
+            this.cb_makes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_makes.FormattingEnabled = true;
             this.cb_makes.Location = new System.Drawing.Point(99, 69);
             this.cb_makes.Name = "cb_makes";
             this.cb_makes.Size = new System.Drawing.Size(126, 21);
             this.cb_makes.TabIndex = 0;
             this.cb_makes.SelectedIndexChanged += new System.EventHandler(this.cb_makes_SelectedIndexChanged);
+            this.cb_makes.Click += new System.EventHandler(this.input_check);
             // 
             // l_make
             // 
@@ -85,12 +87,14 @@
             // 
             // cb_models
             // 
+            this.cb_models.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_models.Enabled = false;
             this.cb_models.FormattingEnabled = true;
             this.cb_models.Location = new System.Drawing.Point(99, 119);
             this.cb_models.Name = "cb_models";
             this.cb_models.Size = new System.Drawing.Size(126, 21);
             this.cb_models.TabIndex = 1;
+            this.cb_models.Click += new System.EventHandler(this.input_check);
             // 
             // l_price
             // 
@@ -131,18 +135,18 @@
             this.l_city.TabIndex = 6;
             this.l_city.Text = "City: ";
             // 
-            // l_highway
+            // l_hwy
             // 
-            this.l_highway.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.l_hwy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.l_highway.AutoSize = true;
-            this.l_highway.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.l_highway.Location = new System.Drawing.Point(310, 120);
-            this.l_highway.Name = "l_highway";
-            this.l_highway.Size = new System.Drawing.Size(65, 16);
-            this.l_highway.TabIndex = 7;
-            this.l_highway.Text = "Highway: ";
+            this.l_hwy.AutoSize = true;
+            this.l_hwy.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.l_hwy.Location = new System.Drawing.Point(310, 120);
+            this.l_hwy.Name = "l_hwy";
+            this.l_hwy.Size = new System.Drawing.Size(65, 16);
+            this.l_hwy.TabIndex = 7;
+            this.l_hwy.Text = "Highway: ";
             // 
             // tb_price
             // 
@@ -150,6 +154,7 @@
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(94, 20);
             this.tb_price.TabIndex = 2;
+            this.tb_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
             // 
             // tb_city
             // 
@@ -157,20 +162,22 @@
             this.tb_city.Name = "tb_city";
             this.tb_city.Size = new System.Drawing.Size(58, 20);
             this.tb_city.TabIndex = 4;
+            this.tb_city.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
             // 
-            // tb_highway
+            // tb_hwy
             // 
-            this.tb_highway.Location = new System.Drawing.Point(389, 119);
-            this.tb_highway.Name = "tb_highway";
-            this.tb_highway.Size = new System.Drawing.Size(58, 20);
-            this.tb_highway.TabIndex = 3;
+            this.tb_hwy.Location = new System.Drawing.Point(389, 119);
+            this.tb_hwy.Name = "tb_hwy";
+            this.tb_hwy.Size = new System.Drawing.Size(58, 20);
+            this.tb_hwy.TabIndex = 3;
+            this.tb_hwy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
             // 
             // btn_cancel
             // 
             this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_cancel.Location = new System.Drawing.Point(12, 203);
+            this.btn_cancel.Location = new System.Drawing.Point(12, 298);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(83, 30);
             this.btn_cancel.TabIndex = 7;
@@ -181,14 +188,16 @@
             // btn_next
             // 
             this.btn_next.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_next.Enabled = false;
             this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_next.Location = new System.Drawing.Point(292, 203);
+            this.btn_next.Location = new System.Drawing.Point(400, 298);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(83, 30);
             this.btn_next.TabIndex = 5;
             this.btn_next.Text = "Next Car";
             this.btn_next.UseVisualStyleBackColor = true;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            this.btn_next.Click += new System.EventHandler(this.input_check);
             // 
             // l_number
             // 
@@ -215,24 +224,26 @@
             this.btn_prev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_prev.Enabled = false;
             this.btn_prev.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_prev.Location = new System.Drawing.Point(192, 203);
+            this.btn_prev.Location = new System.Drawing.Point(300, 298);
             this.btn_prev.Name = "btn_prev";
             this.btn_prev.Size = new System.Drawing.Size(94, 30);
             this.btn_prev.TabIndex = 6;
             this.btn_prev.Text = "Previous Car";
             this.btn_prev.UseVisualStyleBackColor = true;
             this.btn_prev.Click += new System.EventHandler(this.b_prev_Click);
+            this.btn_prev.Click += new System.EventHandler(this.input_check);
             // 
-            // btn_done
+            // l_error
             // 
-            this.btn_done.Enabled = false;
-            this.btn_done.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_done.Location = new System.Drawing.Point(381, 203);
-            this.btn_done.Name = "btn_done";
-            this.btn_done.Size = new System.Drawing.Size(96, 30);
-            this.btn_done.TabIndex = 107;
-            this.btn_done.Text = "Done";
-            this.btn_done.UseVisualStyleBackColor = true;
+            this.l_error.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.l_error.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.l_error.Location = new System.Drawing.Point(57, 224);
+            this.l_error.Name = "l_error";
+            this.l_error.Size = new System.Drawing.Size(390, 31);
+            this.l_error.TabIndex = 108;
+            this.l_error.Text = "You must complete all fields to continue";
             // 
             // Car_Details
             // 
@@ -240,17 +251,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(478, 245);
-            this.Controls.Add(this.btn_done);
+            this.ClientSize = new System.Drawing.Size(495, 340);
+            this.Controls.Add(this.l_error);
             this.Controls.Add(this.btn_prev);
             this.Controls.Add(this.l_counter);
             this.Controls.Add(this.l_number);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.tb_highway);
+            this.Controls.Add(this.tb_hwy);
             this.Controls.Add(this.tb_city);
             this.Controls.Add(this.tb_price);
-            this.Controls.Add(this.l_highway);
+            this.Controls.Add(this.l_hwy);
             this.Controls.Add(this.l_city);
             this.Controls.Add(this.l_mpg);
             this.Controls.Add(this.l_price);
@@ -278,15 +289,15 @@
         private System.Windows.Forms.Label l_price;
         private System.Windows.Forms.Label l_mpg;
         private System.Windows.Forms.Label l_city;
-        private System.Windows.Forms.Label l_highway;
+        private System.Windows.Forms.Label l_hwy;
         private System.Windows.Forms.TextBox tb_price;
         private System.Windows.Forms.TextBox tb_city;
-        private System.Windows.Forms.TextBox tb_highway;
+        private System.Windows.Forms.TextBox tb_hwy;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Label l_number;
         private System.Windows.Forms.Label l_counter;
         private System.Windows.Forms.Button btn_prev;
-        private System.Windows.Forms.Button btn_done;
+        private System.Windows.Forms.Label l_error;
     }
 }

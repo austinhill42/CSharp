@@ -26,48 +26,43 @@ namespace Programming_Assignment_2
         private void btn_next_Click(object sender, EventArgs e)
         {
             Car_Details form = (Car_Details)((Button)sender).Parent;
-            int count = Convert.ToInt32(form.l_counter.Text);
-            bool complete = true;
+            int counter = Convert.ToInt32(form.l_counter.Text);
+            int count = counter - 1;
 
-            // check to make sure the user has filled out all fields
-            foreach (TextBox tb in form.Controls.OfType<TextBox>())
-            {
-                if (tb.Text.Equals(string.Empty))
-                {
-                    complete = false;
-                    break;
-                }
-            }
-            foreach (ComboBox cb in form.Controls.OfType<ComboBox>())
-            {
-                if (cb.Text.Equals(string.Empty))
-                {
-                    complete = false;
-                    break;
-                }
-            }
+            // store the entered values
+            Car.Cars[count].Make = cb_makes.SelectedItem.ToString();
+            Car.Cars[count].Model = cb_models.SelectedItem.ToString();
+            Car.Cars[count].CityMileage = Convert.ToInt32(tb_city.Text);
+            Car.Cars[count].HwyMileage = Convert.ToInt32(tb_hwy.Text);
+            Car.Cars[count].Price = Convert.ToInt32(tb_price.Text);
 
             // show error window if any fields are missing, otherwise continue
-            if (complete)
+            // update the counter for selected car
+            form.l_counter.Text = (++counter).ToString();
+            ++count;
+
+            // exit the program when done
+            if (btn_next.Text.Equals("Done"))
             {
-                // update the counter for selected car
-                form.l_counter.Text = (++count).ToString();
+                this.Close();
+                return;
+            }
 
-                // don't allow the user to enter more cars than given
-                if (form.l_counter.Text.Equals(Car_Analysis.NumCars.ToString()))
-                {
-                    form.btn_next.Enabled = false;
-                    form.btn_done.Enabled = true;
-                }
-                
-                // make previous button clickable
-                if (!form.btn_prev.Enabled)
-                    form.btn_prev.Enabled = true;
+            // don't allow the user to enter more cars than given
+            if (form.l_counter.Text.Equals(Car.Cars.Count.ToString()))
+                form.btn_next.Text = "Done";
 
-                // clear previous selections
-                form.cb_makes.Text = string.Empty;
+            // make previous button clickable
+            if (!form.btn_prev.Enabled)
+                form.btn_prev.Enabled = true;
+
+
+            if (Car.Cars[count].Make.Equals(""))
+            {
+                // clear errant data
+                form.cb_makes.SelectedIndex = -1;
                 form.tb_city.Text = string.Empty;
-                form.tb_highway.Text = string.Empty;
+                form.tb_hwy.Text = string.Empty;
                 form.tb_price.Text = string.Empty;
 
                 // reset the models combobox
@@ -76,25 +71,38 @@ namespace Programming_Assignment_2
             }
             else
             {
-                MessageBox.Show("You must complete all fields to continue!", "Error", MessageBoxButtons.OK);
-            }
+                // show previouslyentered data
+                form.cb_makes.SelectedIndex = form.cb_makes.FindString(Car.Cars[count].Make);
+                form.cb_models.SelectedIndex = form.cb_models.FindString(Car.Cars[count].Model);
+                form.tb_city.Text = Car.Cars[count].CityMileage.ToString();
+                form.tb_hwy.Text = Car.Cars[count].HwyMileage.ToString();
+                form.tb_price.Text = Car.Cars[count].Price.ToString();
+            } 
+
         }
 
         private void b_prev_Click(object sender, EventArgs e)
         {
             Car_Details form = (Car_Details)((Button)sender).Parent;
-            int count = Convert.ToInt32(form.l_counter.Text);
+            int counter = Convert.ToInt32(form.l_counter.Text);
+            int count = counter - 1;
 
             // update the counter for selected car
-            form.l_counter.Text = (--count).ToString();
+            form.l_counter.Text = (--counter).ToString();
+            --count;
 
             // don't allow negative counter
             if (form.l_counter.Text.Equals("1"))
                 ((Button)sender).Enabled = false;
 
-            /*
-             * TODO add done and next functionality
-             */ 
+            // show previous selections
+            form.cb_makes.SelectedIndex = form.cb_makes.FindString(Car.Cars[count].Make);
+            form.cb_models.SelectedIndex = form.cb_models.FindString(Car.Cars[count].Model);
+            form.tb_city.Text = Car.Cars[count].CityMileage.ToString();
+            form.tb_hwy.Text = Car.Cars[count].HwyMileage.ToString();
+            form.tb_price.Text = Car.Cars[count].Price.ToString();
+
+            btn_next.Text = "Next Car";
         }
 
         private void cb_makes_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,34 +116,45 @@ namespace Programming_Assignment_2
             // reset the models combobox
             form.cb_models.Items.Clear();
             form.cb_models.Text = string.Empty;
-            
-            string selected = ((ComboBox)sender).SelectedItem.ToString();
-            List<string> temp = new List<string>();
 
-            // gets the list of models for the selected make from the xml file
-            foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
-                if (make.Attribute("name").Value.Equals(selected))
-                    foreach (XElement model in make.Elements("model"))
-                        temp.Add(model.Attribute("name").Value);
+            try
+            {
+                string selected = ((ComboBox)sender).SelectedItem.ToString();
+                List<string> temp = new List<string>();
 
-            // order the items alphabetically
-            object[] models = (from model in temp
+                // gets the list of models for the selected make from the xml file
+                foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
+                    if (make.Attribute("name").Value.Equals(selected))
+                        foreach (XElement model in make.Elements("model"))
+                            temp.Add(model.Attribute("name").Value);
+
+                // order the items alphabetically
+                object[] models = (from model in temp
                                    orderby model ascending
                                    select model).ToArray<object>();
 
-            // populate the combobox with the list of models
-            form.cb_models.Items.AddRange(models);
+                // populate the combobox with the list of models
+                form.cb_models.Items.AddRange(models);
+            }
+            catch (NullReferenceException ex)
+            {
+               /* nothing needs to be done here: placeholder because NullReferenceException is thrown 
+                * when selectedItem is -1, selectedItem becomes -1 when resetting the values when the 
+                * next button is clicked
+                * it's not a bug...it's a feature...
+                */
+            }
+
         }
 
         private void Car_Details_Load(object sender, EventArgs e)
         {
-            if (Car_Analysis.NumCars == 1)
+            if (Car.Cars.Count == 1)
             {
-                ((Car_Details)sender).btn_next.Enabled = false;
-                ((Car_Details)sender).btn_done.Enabled = true;
+                ((Car_Details)sender).btn_next.Text = "Done";
             }
 
-            List <string> temp = new List<string>();
+            List<string> temp = new List<string>();
 
             // gets the list of makes from the xml file
             foreach (XElement make in XElement.Load(@"..\..\Hybrid Cars.xml").Elements("make"))
@@ -143,19 +162,51 @@ namespace Programming_Assignment_2
 
             // order the items alphabetically
             object[] makes = (from make in temp
-                                  orderby make ascending
-                                  select make).ToArray<object>();
+                              orderby make ascending
+                              select make).ToArray<object>();
 
             // populate the combobox with the list of makes
             cb_makes.Items.AddRange(makes);
 
         }
 
-        private void populateModels(string name, Car_Details form)
+        private void input_check(object sender, EventArgs e)
         {
-            // populates the models combobox with current (model year 2000 or newer) hybrid models
-            // from the selected make
-            
+            Car_Details form;
+
+            if (sender is ComboBox)
+                form = (Car_Details)((ComboBox)sender).Parent;
+            else if (sender is TextBox)
+                form = (Car_Details)((TextBox)sender).Parent;
+            else// if (sender is Button)
+                form = (Car_Details)((Button)sender).Parent;
+
+            bool complete = true;
+
+            // check to make sure the user has filled out all fields
+            foreach (TextBox tb in form.Controls.OfType<TextBox>())
+            {
+                if (tb.Text.Equals(string.Empty))
+                {
+                    complete = false;
+                    break;
+                }
+            }
+
+            if (cb_makes.SelectedIndex == -1 || cb_models.SelectedIndex == -1)
+                complete = false;
+
+            // show or hide the error label and next button
+            if (complete)
+            {
+                l_error.Visible = false;
+                btn_next.Enabled = true;
+            }
+            else
+            {
+                l_error.Visible = true;
+                btn_next.Enabled = false;
+            }
         }
     }
 }

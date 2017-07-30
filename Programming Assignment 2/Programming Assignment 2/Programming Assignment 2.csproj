@@ -58,7 +58,7 @@
     <Compile Include="Main Form.Designer.cs">
       <DependentUpon>Main Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Car Analysis.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Car Details.resx">
       <DependentUpon>Car Details.cs</DependentUpon>
