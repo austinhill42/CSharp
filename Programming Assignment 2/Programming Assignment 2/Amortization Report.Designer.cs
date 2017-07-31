@@ -32,10 +32,12 @@
             this.l_cars = new System.Windows.Forms.Label();
             this.l_downpmt = new System.Windows.Forms.Label();
             this.tb_downpmt = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_rate = new System.Windows.Forms.TextBox();
+            this.l_rate = new System.Windows.Forms.Label();
+            this.tb_period = new System.Windows.Forms.TextBox();
             this.l_period = new System.Windows.Forms.Label();
+            this.btn_done = new System.Windows.Forms.Button();
+            this.btn_report = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cb_cars
@@ -79,58 +81,91 @@
             this.tb_downpmt.Size = new System.Drawing.Size(94, 20);
             this.tb_downpmt.TabIndex = 4;
             // 
-            // textBox1
+            // tb_rate
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(518, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 6;
+            this.tb_rate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb_rate.Location = new System.Drawing.Point(518, 47);
+            this.tb_rate.Name = "tb_rate";
+            this.tb_rate.Size = new System.Drawing.Size(94, 20);
+            this.tb_rate.TabIndex = 6;
             // 
-            // label1
+            // l_rate
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(431, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Interest rate:";
+            this.l_rate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.l_rate.AutoSize = true;
+            this.l_rate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l_rate.Location = new System.Drawing.Point(415, 48);
+            this.l_rate.Name = "l_rate";
+            this.l_rate.Size = new System.Drawing.Size(97, 16);
+            this.l_rate.TabIndex = 5;
+            this.l_rate.Text = "Interest rate %:";
             // 
-            // textBox2
+            // tb_period
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(518, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 8;
+            this.tb_period.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb_period.Location = new System.Drawing.Point(518, 80);
+            this.tb_period.Name = "tb_period";
+            this.tb_period.Size = new System.Drawing.Size(94, 20);
+            this.tb_period.TabIndex = 8;
             // 
             // l_period
             // 
             this.l_period.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.l_period.AutoSize = true;
             this.l_period.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_period.Location = new System.Drawing.Point(431, 81);
+            this.l_period.Location = new System.Drawing.Point(433, 81);
             this.l_period.Name = "l_period";
             this.l_period.Size = new System.Drawing.Size(79, 16);
             this.l_period.TabIndex = 7;
             this.l_period.Text = "Loan period:";
             // 
+            // btn_done
+            // 
+            this.btn_done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_done.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_done.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_done.Location = new System.Drawing.Point(12, 215);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(90, 30);
+            this.btn_done.TabIndex = 201;
+            this.btn_done.TabStop = false;
+            this.btn_done.Text = "Done";
+            this.btn_done.UseVisualStyleBackColor = true;
+            this.btn_done.Click += new System.EventHandler(this.btn_done_Click);
+            // 
+            // btn_report
+            // 
+            this.btn_report.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_report.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_report.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_report.Location = new System.Drawing.Point(463, 215);
+            this.btn_report.Name = "btn_report";
+            this.btn_report.Size = new System.Drawing.Size(149, 30);
+            this.btn_report.TabIndex = 100;
+            this.btn_report.TabStop = false;
+            this.btn_report.Text = "Generate Report";
+            this.btn_report.UseVisualStyleBackColor = true;
+            this.btn_report.Click += new System.EventHandler(this.btn_report_Click);
+            // 
             // Amortization_Report
             // 
+            this.AcceptButton = this.btn_report;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_done;
             this.ClientSize = new System.Drawing.Size(624, 257);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btn_report);
+            this.Controls.Add(this.btn_done);
+            this.Controls.Add(this.tb_period);
             this.Controls.Add(this.l_period);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_rate);
+            this.Controls.Add(this.l_rate);
             this.Controls.Add(this.tb_downpmt);
             this.Controls.Add(this.l_downpmt);
             this.Controls.Add(this.l_cars);
             this.Controls.Add(this.cb_cars);
             this.Name = "Amortization_Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Amortization Report";
             this.Load += new System.EventHandler(this.Amortization_Report_Load);
             this.ResumeLayout(false);
@@ -144,9 +179,11 @@
         private System.Windows.Forms.Label l_cars;
         private System.Windows.Forms.Label l_downpmt;
         private System.Windows.Forms.TextBox tb_downpmt;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_rate;
+        private System.Windows.Forms.Label l_rate;
+        private System.Windows.Forms.TextBox tb_period;
         private System.Windows.Forms.Label l_period;
+        private System.Windows.Forms.Button btn_done;
+        private System.Windows.Forms.Button btn_report;
     }
 }
