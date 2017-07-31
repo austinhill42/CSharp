@@ -17,7 +17,7 @@ namespace Programming_Assignment_2
         // on form load, populate the makes combobox from the list of makes, alphabetically
         private void Car_Details_Load(object sender, EventArgs e)
         {
-            if (Car.Cars.Count == 1)
+            if (Car.NumCars == 1)
             {
                 ((Car_Details)sender).btn_next.Text = "Done";
             }
@@ -45,21 +45,15 @@ namespace Programming_Assignment_2
             try
             {
                 // store the entered values
-                Car.Cars[count].Make = cb_makes.SelectedItem.ToString();
-                Car.Cars[count].Model = cb_models.SelectedItem.ToString();
-                Car.Cars[count].CityMileage = Convert.ToInt32(tb_city.Text);
-                Car.Cars[count].HwyMileage = Convert.ToInt32(tb_hwy.Text);
-                Car.Cars[count].Price = Convert.ToInt32(tb_price.Text);
-                Car.Cars[count].CalculateCostOfGas();
-                Car.Cars[count].CalculateCostOfOwnership();
+                Car.Cars.Add(new Car(cb_makes.SelectedItem.ToString(), cb_models.SelectedItem.ToString(),
+                    Convert.ToInt32(tb_price.Text), Convert.ToInt32(tb_city.Text), Convert.ToInt32(tb_hwy.Text)));
 
                 // update the counter for selected car
                 form.l_counter.Text = (++counter).ToString();
                 ++count;
 
                 // make previous button clickable
-                if (!form.btn_prev.Enabled)
-                    form.btn_prev.Enabled = true;
+                form.btn_prev.Enabled = true;
 
                 // exit the program when done
                 if (btn_next.Text.Equals("Done"))
@@ -69,10 +63,10 @@ namespace Programming_Assignment_2
                 }
 
                 // don't allow the user to enter more cars than given
-                if (form.l_counter.Text.Equals(Car.Cars.Count.ToString()))
+                if (counter == Car.NumCars)
                     form.btn_next.Text = "Done";
 
-                if (Car.Cars[count].Make.Equals(""))
+                if (Car.Cars.Count < counter)
                 {
                     // clear errant data
                     form.cb_makes.SelectedIndex = -1;

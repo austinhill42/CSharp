@@ -40,11 +40,8 @@ namespace Programming_Assignment_2
                 // remove old entries
                 Car.Cars = new List<Car>();
 
-                // create the list of objects
-                for (int i = 0; i < Convert.ToInt32(tb_numcars.Text); i++)
-                    Car.Cars.Add(new Car());
-
                 // populate static variables
+                Car.NumCars = Convert.ToInt32(tb_numcars.Text);
                 Car.CityMilesDriven = Convert.ToInt32(tb_citymiles.Text);
                 Car.HwyMilesDriven = Convert.ToInt32(tb_hwymiles.Text);
 

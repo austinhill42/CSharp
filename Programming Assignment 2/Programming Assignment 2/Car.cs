@@ -13,8 +13,8 @@ namespace Programming_Assignment_2
         public double CityMileage { get; set; }
         public double HwyMileage { get; set; }
         public double Price { get; set; }
-        public string Make { get; set; }   
-        public string Model { get; set; }   
+        public string Make { get; set; }
+        public string Model { get; set; }
         public static int NumCars { get; set; }
         public static double CityMilesDriven { get; set; }
         public static double HwyMilesDriven { get; set; }
@@ -22,13 +22,17 @@ namespace Programming_Assignment_2
         public static List<double> PricePerGal { get; set; }
 
         // fully parameterized constructor, all parameters optional
-        public Car(double cityMileage = 0, double hwyMileage = 0, double price = 0, string make = "", string model = "")
+        public Car(string make = "", string model = "", double price = 0, double cityMileage = 0,
+            double hwyMileage = 0, double costOfGas = 0, double costOfOwnership = 0)
         {
-            CityMileage = cityMileage;
-            HwyMileage = hwyMileage;
-            Price = price;
             Make = make;
             Model = model;
+            Price = price;
+            CityMileage = cityMileage;
+            HwyMileage = hwyMileage;
+            CostOfGas = (from ppg in PricePerGal
+                         select ((CityMilesDriven / CityMileage) + (HwyMilesDriven / HwyMileage)) * ppg).Sum();
+            CostOfOwnership = this.Price + this.CostOfGas;
         } // Car
 
         // calculate cost of gas
@@ -36,16 +40,15 @@ namespace Programming_Assignment_2
         {
             // override previous data, if any
             CostOfGas = 0;
-                      
-            foreach (double ppg in Car.PricePerGal)
-                CostOfGas += ((CityMilesDriven / this.CityMileage) + (HwyMilesDriven / this.HwyMileage)) * ppg;
+
+
 
         } // CalculateCostOfGas
 
         // calculate cost of ownership
         public void CalculateCostOfOwnership()
         {
-            CostOfOwnership = this.Price + this.CostOfGas;
+
         } // CalculateCostOfOwnership
 
         // overrided ToString
