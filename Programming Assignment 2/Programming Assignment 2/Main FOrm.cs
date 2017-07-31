@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Programming_Assignment_2
@@ -15,7 +11,7 @@ namespace Programming_Assignment_2
         public Main_Form()
         {
             InitializeComponent();
-        }
+        } // Main_Form
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
@@ -28,26 +24,22 @@ namespace Programming_Assignment_2
 
             // add event handlers to check if textboxes have received input
             foreach (TextBox tb in ((Main_Form)sender).Controls.OfType<TextBox>())
-                tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
+                tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Check);
 
             foreach (TextBox tb in ((Main_Form)sender).pnl_ppg.Controls.OfType<TextBox>())
-                tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
-        }
+                tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Check);
+        } // Main_Form_Load
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-            // exit the program when done
-            if (btn_next.Text.Equals("Done"))
-            {
-                this.Close();
-                return;
-            }
-
             Main_Form mainform = (Main_Form)(((Button)sender).Parent);
 
             // create the list of objects and populate static variables
             try
             {
+                // remove old entries
+                Car.Cars = new List<Car>();
+
                 // create the list of objects
                 for (int i = 0; i < Convert.ToInt32(tb_numcars.Text); i++)
                     Car.Cars.Add(new Car());
@@ -60,54 +52,22 @@ namespace Programming_Assignment_2
                 Car.PricePerGal = (from tb in mainform.pnl_ppg.Controls.Cast<TextBox>()
                                    orderby tb.TabIndex
                                    select Convert.ToDouble(tb.Text)).ToList<double>();
-                
+
                 // show the next form to get data for each car
                 Car_Details form = new Car_Details();
                 form.ShowDialog();
 
-                // done with the program
-                btn_next.Text = "Done";
-
-                string output = "";
-                string spacer = " ";
-
-                // Formatting the header
-                output += string.Format("{0,-15}", "Year:");
-
-                foreach (Label l in mainform.Controls.OfType<Label>())
-                    if (l.Name.Contains("year") && !l.Name.Equals("l_year"))
-                        output += string.Format("{0,-8}", l.Text);
-
-                output += string.Format("\r\n{0,-15}", "Price per Gal:");
-                //output += string.Format("{0,-30}", spacer);
-
-                foreach (double i in Car.PricePerGal)
-                    output += string.Format("{0, -8}", i);
-
-                output += string.Format("\r\n\r\nMiles driven: {0,-8} {1,-9}", "city:", "highway:");
-                output += string.Format("\r\n{0,-13} {1,-8:##,###} {2,-9:##,###}", spacer, 
-                    Car.CityMilesDriven, Car.HwyMilesDriven);
-                output += string.Format("\r\n\r\n");
-
-                foreach (Car car in Car.Cars)
-                    output += car.ToString();
-
-
-                tb_output.Text = output;
+                tb_output.Text = Car.FormattedOutput();
             }
             catch (FormatException ex)
             {
+                // show error message if Convert.ToInt32 throws an exception
                 MessageBox.Show("Only numbers are allowed, please check your data", "Error", MessageBoxButtons.OK);
-                Console.WriteLine(ex.Message);
             }
-        }
+        } // btn_next_click
 
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void input_check(object sender, EventArgs e)
+        // check if all fields have recieved input
+        private void Input_Check(object sender, EventArgs e)
         {
             Main_Form mainform;
             bool complete = true;
@@ -147,6 +107,10 @@ namespace Programming_Assignment_2
                 l_error.Visible = true;
                 btn_next.Enabled = false;
             }
-        }
-    }
-}
+        } // input_check 
+
+        // close the dialog window
+        private void btn_done_Click(object sender, EventArgs e) { this.Close(); }
+
+    } // class Main_Form
+} // namespace Programming_Assignment_2

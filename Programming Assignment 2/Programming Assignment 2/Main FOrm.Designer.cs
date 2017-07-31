@@ -54,7 +54,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_next = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_done = new System.Windows.Forms.Button();
             this.tb_numcars = new System.Windows.Forms.TextBox();
             this.tb_citymiles = new System.Windows.Forms.TextBox();
             this.tb_hwymiles = new System.Windows.Forms.TextBox();
@@ -314,19 +314,19 @@
             this.btn_next.UseVisualStyleBackColor = true;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
-            // btn_cancel
+            // btn_done
             // 
-            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancel.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_cancel.Location = new System.Drawing.Point(12, 418);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(83, 30);
-            this.btn_cancel.TabIndex = 200;
-            this.btn_cancel.TabStop = false;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.btn_done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_done.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_done.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_done.Location = new System.Drawing.Point(12, 418);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(83, 30);
+            this.btn_done.TabIndex = 200;
+            this.btn_done.TabStop = false;
+            this.btn_done.Text = "Done";
+            this.btn_done.UseVisualStyleBackColor = true;
+            this.btn_done.Click += new System.EventHandler(this.btn_done_Click);
             // 
             // tb_numcars
             // 
@@ -413,7 +413,7 @@
             this.AcceptButton = this.btn_next;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btn_cancel;
+            this.CancelButton = this.btn_done;
             this.ClientSize = new System.Drawing.Size(911, 460);
             this.Controls.Add(this.pnl_ignore);
             this.Controls.Add(this.pnl_ppg);
@@ -421,7 +421,7 @@
             this.Controls.Add(this.tb_hwymiles);
             this.Controls.Add(this.tb_citymiles);
             this.Controls.Add(this.tb_numcars);
-            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_done);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.l_year1);
             this.Controls.Add(this.l_year2);
@@ -481,7 +481,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_next;
-        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_done;
         private System.Windows.Forms.TextBox tb_numcars;
         private System.Windows.Forms.TextBox tb_citymiles;
         private System.Windows.Forms.TextBox tb_hwymiles;

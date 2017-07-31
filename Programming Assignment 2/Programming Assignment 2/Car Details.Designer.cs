@@ -56,7 +56,7 @@
             this.cb_makes.Size = new System.Drawing.Size(126, 21);
             this.cb_makes.TabIndex = 0;
             this.cb_makes.SelectedIndexChanged += new System.EventHandler(this.cb_makes_SelectedIndexChanged);
-            this.cb_makes.Click += new System.EventHandler(this.input_check);
+            this.cb_makes.Click += new System.EventHandler(this.Input_Check);
             // 
             // l_make
             // 
@@ -94,7 +94,7 @@
             this.cb_models.Name = "cb_models";
             this.cb_models.Size = new System.Drawing.Size(126, 21);
             this.cb_models.TabIndex = 1;
-            this.cb_models.Click += new System.EventHandler(this.input_check);
+            this.cb_models.Click += new System.EventHandler(this.Input_Check);
             // 
             // l_price
             // 
@@ -154,7 +154,7 @@
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(94, 20);
             this.tb_price.TabIndex = 2;
-            this.tb_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
+            this.tb_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Check);
             // 
             // tb_city
             // 
@@ -162,7 +162,7 @@
             this.tb_city.Name = "tb_city";
             this.tb_city.Size = new System.Drawing.Size(58, 20);
             this.tb_city.TabIndex = 4;
-            this.tb_city.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
+            this.tb_city.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Check);
             // 
             // tb_hwy
             // 
@@ -170,7 +170,7 @@
             this.tb_hwy.Name = "tb_hwy";
             this.tb_hwy.Size = new System.Drawing.Size(58, 20);
             this.tb_hwy.TabIndex = 3;
-            this.tb_hwy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.input_check);
+            this.tb_hwy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Check);
             // 
             // btn_cancel
             // 
@@ -197,7 +197,7 @@
             this.btn_next.Text = "Next Car";
             this.btn_next.UseVisualStyleBackColor = true;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
-            this.btn_next.Click += new System.EventHandler(this.input_check);
+            this.btn_next.Click += new System.EventHandler(this.Input_Check);
             // 
             // l_number
             // 
@@ -231,7 +231,7 @@
             this.btn_prev.Text = "Previous Car";
             this.btn_prev.UseVisualStyleBackColor = true;
             this.btn_prev.Click += new System.EventHandler(this.b_prev_Click);
-            this.btn_prev.Click += new System.EventHandler(this.input_check);
+            this.btn_prev.Click += new System.EventHandler(this.Input_Check);
             // 
             // l_error
             // 
