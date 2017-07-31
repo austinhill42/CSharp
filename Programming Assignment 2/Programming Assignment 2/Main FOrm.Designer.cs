@@ -62,6 +62,7 @@
             this.pnl_ppg = new System.Windows.Forms.Panel();
             this.tb_output = new System.Windows.Forms.TextBox();
             this.pnl_ignore = new System.Windows.Forms.Panel();
+            this.btn_report = new System.Windows.Forms.Button();
             this.pnl_ppg.SuspendLayout();
             this.pnl_ignore.SuspendLayout();
             this.SuspendLayout();
@@ -306,9 +307,9 @@
             this.btn_next.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_next.Enabled = false;
             this.btn_next.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btn_next.Location = new System.Drawing.Point(816, 418);
+            this.btn_next.Location = new System.Drawing.Point(809, 418);
             this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(83, 30);
+            this.btn_next.Size = new System.Drawing.Size(90, 30);
             this.btn_next.TabIndex = 101;
             this.btn_next.Text = "Next";
             this.btn_next.UseVisualStyleBackColor = true;
@@ -321,7 +322,7 @@
             this.btn_done.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btn_done.Location = new System.Drawing.Point(12, 418);
             this.btn_done.Name = "btn_done";
-            this.btn_done.Size = new System.Drawing.Size(83, 30);
+            this.btn_done.Size = new System.Drawing.Size(90, 30);
             this.btn_done.TabIndex = 200;
             this.btn_done.TabStop = false;
             this.btn_done.Text = "Done";
@@ -408,6 +409,19 @@
             this.pnl_ignore.Size = new System.Drawing.Size(887, 242);
             this.pnl_ignore.TabIndex = 202;
             // 
+            // btn_report
+            // 
+            this.btn_report.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_report.Enabled = false;
+            this.btn_report.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btn_report.Location = new System.Drawing.Point(713, 418);
+            this.btn_report.Name = "btn_report";
+            this.btn_report.Size = new System.Drawing.Size(90, 30);
+            this.btn_report.TabIndex = 203;
+            this.btn_report.Text = "Loan Report";
+            this.btn_report.UseVisualStyleBackColor = true;
+            this.btn_report.Click += new System.EventHandler(this.btn_report_Click);
+            // 
             // Main_Form
             // 
             this.AcceptButton = this.btn_next;
@@ -415,6 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_done;
             this.ClientSize = new System.Drawing.Size(911, 460);
+            this.Controls.Add(this.btn_report);
             this.Controls.Add(this.pnl_ignore);
             this.Controls.Add(this.pnl_ppg);
             this.Controls.Add(this.l_error);
@@ -489,6 +504,7 @@
         private System.Windows.Forms.Panel pnl_ppg;
         private System.Windows.Forms.TextBox tb_output;
         private System.Windows.Forms.Panel pnl_ignore;
+        private System.Windows.Forms.Button btn_report;
     }
 }
 

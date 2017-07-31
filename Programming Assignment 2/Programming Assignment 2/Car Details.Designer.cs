@@ -49,6 +49,7 @@
             // 
             // cb_makes
             // 
+            this.cb_makes.CausesValidation = false;
             this.cb_makes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_makes.FormattingEnabled = true;
             this.cb_makes.Location = new System.Drawing.Point(99, 69);
@@ -230,7 +231,7 @@
             this.btn_prev.TabIndex = 6;
             this.btn_prev.Text = "Previous Car";
             this.btn_prev.UseVisualStyleBackColor = true;
-            this.btn_prev.Click += new System.EventHandler(this.b_prev_Click);
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
             this.btn_prev.Click += new System.EventHandler(this.Input_Check);
             // 
             // l_error

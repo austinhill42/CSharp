@@ -23,7 +23,7 @@ namespace Programming_Assignment_2
 
         // fully parameterized constructor, all parameters optional
         public Car(string make = "", string model = "", double price = 0, double cityMileage = 0,
-            double hwyMileage = 0, double costOfGas = 0, double costOfOwnership = 0)
+            double hwyMileage = 0)
         {
             Make = make;
             Model = model;
@@ -38,17 +38,16 @@ namespace Programming_Assignment_2
         // calculate cost of gas
         public void CalculateCostOfGas()
         {
-            // override previous data, if any
-            CostOfGas = 0;
-
-
-
+            // calculates the cost of gas if the values weren't set during constructor call
+            CostOfGas = (from ppg in PricePerGal
+                         select ((CityMilesDriven / CityMileage) + (HwyMilesDriven / HwyMileage)) * ppg).Sum(); ;
         } // CalculateCostOfGas
 
         // calculate cost of ownership
         public void CalculateCostOfOwnership()
         {
-
+            // calculates the cost of ownership if the values weren't set during constructor call
+            CostOfOwnership = this.Price + this.CostOfGas;
         } // CalculateCostOfOwnership
 
         // overrided ToString

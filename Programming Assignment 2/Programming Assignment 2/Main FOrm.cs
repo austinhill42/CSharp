@@ -55,6 +55,8 @@ namespace Programming_Assignment_2
                 form.ShowDialog();
 
                 tb_output.Text = Car.FormattedOutput();
+
+                btn_report.Enabled = true;
             }
             catch (FormatException ex)
             {
@@ -62,6 +64,14 @@ namespace Programming_Assignment_2
                 MessageBox.Show("Only numbers are allowed, please check your data", "Error", MessageBoxButtons.OK);
             }
         } // btn_next_click
+
+        // brings up the amortization report
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+            Amortization_Report report = new Amortization_Report();
+            report.ShowDialog();
+
+        } // btn_report_Click
 
         // check if all fields have recieved input
         private void Input_Check(object sender, EventArgs e)
@@ -109,5 +119,6 @@ namespace Programming_Assignment_2
         // close the dialog window
         private void btn_done_Click(object sender, EventArgs e) { this.Close(); }
 
+        
     } // class Main_Form
 } // namespace Programming_Assignment_2

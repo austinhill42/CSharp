@@ -99,7 +99,7 @@ namespace Programming_Assignment_2
         } // btn_next_click
 
         // shows previously entered data
-        private void b_prev_Click(object sender, EventArgs e)
+        private void btn_prev_Click(object sender, EventArgs e)
         {
             Car_Details form = (Car_Details)((Button)sender).Parent;
             int counter = Convert.ToInt32(form.l_counter.Text);
